@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<script>
+   function getHumanChoice(){
+    let choice = prompt("Choose rock, paper or scissors");  
+    // ask user for choice value
+    if (choice === null){
+      alert("Sorry, you didn't enter a value, try again"); 
+      return getHumanChoice();
+   // if choice's value is null, restart the function
+    } else {
+      choice = choice.toLowerCase();
+   // otherwise turn it to lower case in order to make it case insensitive
+    }
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+      return choice;
+   // check if the user's choice is rock, paper or scissors
+    } else {
+      alert("Sorry, that wasn't right, try again.");
+      return getHumanChoice();
+   // if it's not, restart the function
+    }
+}
+
+function getComputerChoice(){
+ let choice = Math.floor(Math.random() * 3);
+ let result
+ if (choice === 0){
+    result = "rock";
+ } else if (choice === 1){
+    result = "paper";
+ } else if (choice === 2){
+    result = "scissors";
+ }
+ return result;
+}
+// make a function that return a value that is either 0, 1 or 2, depending on the value, make the computer's choice rock, paper or scissors
+
+let humanScore = 0;
+let computerScore = 0;
+// declare two variables representing the score of each player
+
+let roundNumber = 0;
+// declare variable to track the number of rounds
+
+function playRound(humanChoice, computerChoice){
+if((humanChoice === "rock" && computerChoice === "rock") || 
+(humanChoice === "paper" && computerChoice === "paper") ||
+(humanChoice === "scissors" && computerChoice === "paper")){
+alert("It's a draw!")
+} else if ((humanChoice === "rock" && computerChoice === "scissors") ||
+(humanChoice === "paper" && computerChoice === "rock") ||
+(humanChoice === "scissors" && computerChoice === "paper")){
+alert("Congratulations, you win!");
+humanScore++;
+} else {
+   alert("Sorry, you lose!");
+   computerScore++;
+}
+roundNumber++;
+alert("Current score for round " + roundNumber + " is: User " + humanScore + " Computer " + computerScore);
+}
+// create the logic for one round of rock, paper, scissors
+
+function playGame(){
+   playRound(getHumanChoice(), getComputerChoice());
+   playRound(getHumanChoice(), getComputerChoice());
+   playRound(getHumanChoice(), getComputerChoice());
+   playRound(getHumanChoice(), getComputerChoice());
+   playRound(getHumanChoice(), getComputerChoice());
+
+
+
+   if(humanScore > computerScore){
+   alert("You have won! Reload this webpage if you want to play another game");
+   } else if (humanScore < computerScore){
+      alert("You have lost! Reload this webpage if you want to play another game");
+   } else if (humanScore === computerScore){
+      alert("It's a draw! Reload this webpage if you want to play another game");
+   }  else {
+      alert("Something has gone wrong");
+   }
+}
+
+playGame();
+
+    </script>
+</html>
