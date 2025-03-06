@@ -1,86 +1,56 @@
 <!DOCTYPE html>
 <html>
-<script>
-   function getHumanChoice(){
-    let choice = prompt("Choose rock, paper or scissors");  
-    // ask user for choice value
-    if (choice === null){
-      alert("Sorry, you didn't enter a value, try again"); 
-      return getHumanChoice();
-   // if choice's value is null, restart the function
-    } else {
-      choice = choice.toLowerCase();
-   // otherwise turn it to lower case in order to make it case insensitive
-    }
-    if (choice === "rock" || choice === "paper" || choice === "scissors") {
-      return choice;
-   // check if the user's choice is rock, paper or scissors
-    } else {
-      alert("Sorry, that wasn't right, try again.");
-      return getHumanChoice();
-   // if it's not, restart the function
-    }
-}
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="style.css">
+   <title>RPS</title>
+</head>
+<script src=script.js defer ></script>
+<body>
+   <h1>Hacker, Mercenary, Cyborg</h1>
+   <p>It's the year 2067 and it's your job to stop an evil AI from conquering your city</p>
+   <p>Choose your agent!</p>
+   <p>Hacker beats Cyborg, Mercenary beats Hacker, Cyborg beats Mercenary</p>
+   <p>First to win 5 rounds wins the game</p>
+   <div id="matchup">
+      <div id="user-agent">
+         <img src="./images/question.png" alt="Your agent" id="ally-image">
+         <h2 id="u-agent">Your agent</h2>
+      </div>
 
-function getComputerChoice(){
- let choice = Math.floor(Math.random() * 3);
- let result
- if (choice === 0){
-    result = "rock";
- } else if (choice === 1){
-    result = "paper";
- } else if (choice === 2){
-    result = "scissors";
- }
- return result;
-}
-// make a function that return a value that is either 0, 1 or 2, depending on the value, make the computer's choice rock, paper or scissors
+      <div id="computer-agent">
+         <img src="./images/question.png" alt="Enemy agent" id="enemy-image">
+         <h2 id="c-agent">The enemy agent</h2>
+      </div>   
+   </div>
 
-let humanScore = 0;
-let computerScore = 0;
-// declare two variables representing the score of each player
+   <p id="roundMessage"></p>
+   <p id="scoreTracker"></p>
 
-let roundNumber = 0;
-// declare variable to track the number of rounds
+   <div class="container">
+      <div class="agent">
+         <div class="image">
+            <img id="hacker" class="btn" class="option" src="./images/hacker.png" alt="A drawing of an unrelenting hacker">
+         </div>
+         <h2>Hacker</h2>
+      </div>
 
-function playRound(humanChoice, computerChoice){
-if((humanChoice === "rock" && computerChoice === "rock") || 
-(humanChoice === "paper" && computerChoice === "paper") ||
-(humanChoice === "scissors" && computerChoice === "paper")){
-alert("It's a draw!")
-} else if ((humanChoice === "rock" && computerChoice === "scissors") ||
-(humanChoice === "paper" && computerChoice === "rock") ||
-(humanChoice === "scissors" && computerChoice === "paper")){
-alert("Congratulations, you win!");
-humanScore++;
-} else {
-   alert("Sorry, you lose!");
-   computerScore++;
-}
-roundNumber++;
-alert("Current score for round " + roundNumber + " is: User " + humanScore + " Computer " + computerScore);
-}
-// create the logic for one round of rock, paper, scissors
+      <div class="agent">
+         <div class="image">
+            <img id="mercenary" class="btn" src="./images/mercenary.png" alt="A drawing of a grizzled mercenary">
+         </div>
+         <h2>Mercenary</h2>
+      </div>
 
-function playGame(){
-   playRound(getHumanChoice(), getComputerChoice());
-   playRound(getHumanChoice(), getComputerChoice());
-   playRound(getHumanChoice(), getComputerChoice());
-   playRound(getHumanChoice(), getComputerChoice());
-   playRound(getHumanChoice(), getComputerChoice());
+      <div class="agent">
+         <div class="image">
+            <img id="cyborg" class="btn"  src="./images/cyborg.png" alt="A drawing of a dangerous and unpredictable cyborg">
+         </div>
+         <h2>Cyborg</h2>
+      </div>
+   </div>
 
-   if(humanScore > computerScore){
-   alert("You have won! Reload this webpage if you want to play another game");
-   } else if (humanScore < computerScore){
-      alert("You have lost! Reload this webpage if you want to play another game");
-   } else if (humanScore === computerScore){
-      alert("It's a draw! Reload this webpage if you want to play another game");
-   }  else {
-      alert("Something has gone wrong");
-   }
-}// create logic for one game of rock paper scissors
-
-playGame();
-
-    </script>
+   
+   
+</body>
 </html>
