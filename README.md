@@ -11,3 +11,9 @@ Credit for "cyborg" illustration: https://ar.pinterest.com/pin/2533343537191936/
 The question mark image is a trophy icon from the videogame Cyberpunk 2077
 
 Color palette: https://www.color-hex.com/color-palette/61235
+
+Fonts used:
+
+-Orbitron: https://fonts.google.com/specimen/Orbitron
+
+-Audiowide: https://fonts.google.com/specimen/Audiowide?categoryFilters=Feeling:%2FExpressive%2FFuturistic
