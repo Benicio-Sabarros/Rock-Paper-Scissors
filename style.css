@@ -6,6 +6,19 @@ body{
     color: white;
 }
 
+h1{
+    font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2{
+    font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 #matchup{
     display: flex;
 }
@@ -57,7 +70,7 @@ body{
     align-items: center;
     max-width: 250px;
     height: auto;
-    margin: 5px;
+    margin: 10px;
 }
 
 .image{
@@ -65,4 +78,11 @@ body{
     width: 100%;
     border-radius: 50%;
     border: #ea00d9 5px double;
+}
+
+p{
+    margin: 8px;
+    font-family: "Tomorrow", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
